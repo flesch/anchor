@@ -1,0 +1,43 @@
+# macOS
+.DS_Store
+
+# Swift / SwiftPM build
+.build/
+.build/*
+/.build/
+
+# Xcode
+DerivedData/
+*.xcworkspace
+xcuserdata/
+*.xcuserstate
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/
+
+# Build products
+build/
+*.o
+*.dSYM
+
+# Swift Package Manager
+Packages/
+Package.resolved
+
+# CocoaPods / Carthage
+Pods/
+Carthage/Build/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Compiled binary (do not commit)
+anchor
+
+# Other
+*.tgz
+*.zip

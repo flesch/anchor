@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>flesch.anchor</string>
+
+    <!-- Path to the compiled binary. Adjust if you install it elsewhere. -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/anchor</string>
+        <!-- Optional: specify display index (0 = primary). Remove to use default. -->
+        <!-- <string>0</string> -->
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <!-- Restart automatically if it crashes -->
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/anchor.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/anchor.err</string>
+</dict>
+</plist>
