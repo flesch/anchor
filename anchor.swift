@@ -175,6 +175,7 @@ final class DockAnchorDaemon {
     var anchorID: CGDirectDisplayID = 0
     var eventTap: CFMachPort?
     var isRelocating = false
+    var lastBlockLog: CFAbsoluteTime = 0
 
     init(anchorIndex: Int) {
         self.anchorIndex = anchorIndex
@@ -269,6 +270,11 @@ final class DockAnchorDaemon {
         let edge = DockEdge.current()
         for display in displays where display.id != anchorID {
             if edge.triggerZone(for: display).contains(loc) {
+                let now = CFAbsoluteTimeGetCurrent()
+                if now - lastBlockLog >= 2.0 {
+                    print("Blocked Dock trigger on \(display.name) (\(edge.rawValue) edge) at (\(Int(loc.x)), \(Int(loc.y)))")
+                    lastBlockLog = now
+                }
                 return nil  // block
             }
         }
